@@ -1,0 +1,29 @@
+let x = 0;
+let y = 0;
+let size = 50;
+let spacing = 30;
+
+function setup() {
+   createCanvas(windowWidth, windowWidth);
+  background(500)
+}
+
+function draw() {
+  noFill(); //no rimepimento
+  strokeWeight(1);
+
+  if(random(1) < 0.5) {
+  
+    circle(x, y, size);
+  }  else {
+    circle(x, y, size /2);
+  }
+  
+  x += size; 
+  
+  if(x > width) {   
+    x = 0;
+    y += size;
+  }
+  
+}

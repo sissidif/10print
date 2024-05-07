@@ -1,0 +1,28 @@
+let x = 0;
+let y = 0;
+let size = 30;
+let spacing = 50;
+
+function setup() {
+  createCanvas(windowWidth, windowHeight);
+  background(255, 255, 0);
+}
+
+function draw() {
+  noFill(); // No filling shapes
+  strokeWeight(2);
+
+  fill(143,0, 255);
+  arc(x + spacing / 2, y + spacing / 2, size, size, PI, TWO_PI); // Position arc in the center of each grid cell
+
+  x += spacing;
+
+  if (x > width) {
+    x = 0;
+    y += spacing;
+
+    if (y > height) {
+      noLoop(); // Stop the draw loop once the grid is filled
+    }
+  }
+}
